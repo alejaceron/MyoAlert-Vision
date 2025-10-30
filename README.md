@@ -10,7 +10,6 @@ El proyecto integra técnicas de **aprendizaje automático** y **aprendizaje pro
 - Identificar la **pared miocárdica afectada** (anterior, inferior, lateral o septal).  
 - Proveer una **aplicación web interactiva** para su uso clínico o investigativo.
 
----
 
 ## 📁 Estructura del repositorio
 
@@ -30,7 +29,9 @@ MyoAlert-Vision/
 │
 ├── LICENSE
 └── README.md
+
 🧠 Descripción técnica
+
 🔹 Modelos implementados
 Modelos clásicos de ML: LightGBM, XGBoost y RandomForest para la detección de eventos isquémicos y la predicción de la localización anatómica del infarto.
 
@@ -39,11 +40,13 @@ Modelo CNN-1D: Red neuronal convolucional unidimensional para la clasificación 
 Estimación anatómica: Modelos auxiliares para la predicción de la pared afectada (anterior, inferior, lateral o septal).
 
 🔹 Preprocesamiento de las señales
+
 Filtrado pasa banda Butterworth de 4.º orden (0.5–40 Hz).
 
 Suavizado mediante ventana de Hann.
 
 Aplanamiento de las señales con la función flatten.
+
 
 🧾 Conjunto de datos
 Debido a su tamaño, el conjunto de datos se distribuye desde la sección Releases del repositorio.
@@ -51,6 +54,7 @@ Debido a su tamaño, el conjunto de datos se distribuye desde la sección Releas
 Archivo	Descripción	Tamaño	SHA-256
 Base.de.datos.MyoAlert.Vision.zip	Base de datos completa de señales ECG procesadas (v1.0)	851 MB	795d498675bc0ae84a93da586c11c9a13f82e33934cbaa0befad45d675cfff37
 base_de_datos_ecg_2025_v1.csv	Archivo resumen con metadatos y etiquetas reorganizadas de los registros de ECG empleados	2.27 MB	032cb91671ff9ab40ee1e7ec758ce12586c858902f967d913c608735edd37f89
+
 
 📂 Estructura del dataset
 plaintext

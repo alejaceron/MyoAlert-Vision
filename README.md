@@ -38,14 +38,15 @@ El archivo `base_de_datos_ecg_2025_v1.csv` actúa como índice general del datas
 Este proyecto está distribuido bajo la licencia **MIT**, lo que permite su uso académico, investigativo y de libre acceso, siempre que se otorgue el crédito correspondiente a los autores y a la **Pontificia Universidad Javeriana de Cali**.
 
 ---
+## Referencia y citación
 
-##  Referencia y créditos
+Si utilizas este proyecto, su base de datos o cualquiera de los modelos desarrollados, por favor realiza la citación correspondiente para otorgar crédito académico a los autores y directores del trabajo.
 
-El desarrollo del proyecto **MyoAlert Vision** fue realizado en el marco del trabajo de grado:
+**Referencia (formato APA):**
 
-**Daza Cerón, J. A., Obregón Londoño, W. F., Torres, C., & Corchuelo, V. (2025).  
+Daza Cerón, J. A., Obregón Londoño, W. F., Torres, C., & Corchuelo, V. (2025).  
 *MyoAlert Vision: sistema inteligente de apoyo diagnóstico para la identificación automática del infarto agudo de miocardio con elevación del segmento ST mediante análisis electrocardiográfico.*  
-Pontificia Universidad Javeriana Cali — Facultad de Ingeniería, Programa de Ingeniería Biomédica.**
+Pontificia Universidad Javeriana Cali — Facultad de Ingeniería, Programa de Ingeniería Biomédica.
 
 **Autores:**  
 - Julieth Alejandra Daza Cerón  
@@ -54,6 +55,24 @@ Pontificia Universidad Javeriana Cali — Facultad de Ingeniería, Programa de I
 **Dirección académica:**  
 - Ing. Cristian Torres, M.Sc.  
 - Ing. Valentina Corchuelo, Ph.D.  
+
+---
+
+### Cita en formato BibTeX
+
+Si deseas incluir esta referencia en un documento LaTeX o gestor bibliográfico, puedes copiar el siguiente bloque:
+
+```bibtex
+@thesis{Daza2025MyoAlertVision,
+  title        = {MyoAlert Vision: sistema inteligente de apoyo diagnóstico para la identificación automática del infarto agudo de miocardio con elevación del segmento ST mediante análisis electrocardiográfico},
+  author       = {Daza Cerón, Julieth Alejandra and Obregón Londoño, William Felipe and Torres, Cristian and Corchuelo, Valentina},
+  year         = {2025},
+  institution  = {Pontificia Universidad Javeriana Cali},
+  type         = {Trabajo de grado},
+  school       = {Facultad de Ingeniería, Programa de Ingeniería Biomédica},
+  address      = {Cali, Colombia}
+}
+  
 
 ---
 

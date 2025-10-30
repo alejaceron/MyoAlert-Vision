@@ -12,7 +12,7 @@ El proyecto integra técnicas de **aprendizaje automático** y **aprendizaje pro
 ---
 
 ## 📁 Estructura del repositorio
-
+''' bash
 MyoAlert-Vision/
 │
 ├── App/
@@ -28,7 +28,7 @@ MyoAlert-Vision/
 │
 ├── LICENSE # Licencia del proyecto (MIT)
 └── README.md # Documentación principal del repositorio
-
+'''
 
 ---
 

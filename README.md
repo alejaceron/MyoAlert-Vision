@@ -32,7 +32,6 @@ MyoAlert-Vision/
 └── README.md
 
 
-🧠 Descripción técnica
 🔹 Modelos implementados
 
 Modelos clásicos de ML: LightGBM, XGBoost y RandomForest para la detección de eventos isquémicos y la predicción de la localización anatómica del infarto.
@@ -87,6 +86,13 @@ Nota: El archivo base_de_datos_ecg_2025_v1.csv resume las etiquetas diagnóstica
 Para más detalles sobre la estructura y la procedencia de los datos, consulta la sección Releases.
 
 ⚠️ Importante: El uso de esta base derivada requiere citar tanto la fuente original (MIMIC-IV WFDB) como el presente proyecto.
+
+📜 Licencia
+
+Este proyecto está bajo la licencia MIT, lo que permite su uso, distribución y modificación con fines académicos y de investigación, siempre que se otorgue el crédito correspondiente a los autores originales.
+
+Consulta el archivo LICENSE
+ para más detalles.
 
 Citación
 

@@ -4,7 +4,7 @@ En esta carpeta se encuentran los notebooks utilizados durante el desarrollo y v
 
 ## Contenido
 
-mld_models_.ipynb: Este notebook contiene el flujo completo de procesamiento y modelado, que incluye:
+mld_models_.ipynb: Contiene el flujo completo de procesamiento y modelado, que incluye:
 
 - Visualización y preprocesamiento de las señales ECG.
 

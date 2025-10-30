@@ -1,4 +1,4 @@
-# Notebooks del Proyecto
+# Desarrollo y Entrenamiento de Modelos
 
 En esta carpeta se encuentran los notebooks utilizados durante el desarrollo y validación del sistema MyoAlert Vision, que abarcan desde el procesamiento de las señales electrocardiográficas hasta la implementación de los modelos de aprendizaje automático.
 

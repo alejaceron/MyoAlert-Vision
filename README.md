@@ -5,14 +5,16 @@
 Este repositorio contiene los códigos, modelos, base de datos y documentación desarrollados en el marco del proyecto de tesis **MyoAlert Vision**, presentado en la **Pontificia Universidad Javeriana de Cali (2025)**.
 
 El proyecto integra técnicas de **aprendizaje automático** y **aprendizaje profundo** para el análisis de señales de ECG, con el fin de:
-- Estimar la **probabilidad de presencia de IAMCEST**.
-- Identificar la **pared miocárdica afectada** (anterior, inferior, lateral o septal).
-- Proveer una **Aplicación web interactiva** para su uso clínico o investigativo.
+
+- Estimar la **probabilidad de presencia de IAMCEST**.  
+- Identificar la **pared miocárdica afectada** (anterior, inferior, lateral o septal).  
+- Proveer una **aplicación web interactiva** para su uso clínico o investigativo.
 
 ---
 
 ## 📁 Estructura del repositorio
 
+```plaintext
 MyoAlert-Vision/
 │
 ├── App/
@@ -28,101 +30,63 @@ MyoAlert-Vision/
 │
 ├── LICENSE
 └── README.md
+🧠 Descripción técnica
+🔹 Modelos implementados
+Modelos clásicos de ML: LightGBM, XGBoost y RandomForest para la detección de eventos isquémicos y la predicción de la localización anatómica del infarto.
 
+Modelo CNN-1D: Red neuronal convolucional unidimensional para la clasificación binaria (presencia o ausencia de IAMCEST).
 
+Estimación anatómica: Modelos auxiliares para la predicción de la pared afectada (anterior, inferior, lateral o septal).
 
----
+🔹 Preprocesamiento de las señales
+Filtrado pasa banda Butterworth de 4.º orden (0.5–40 Hz).
 
-## 🧠 Descripción técnica
+Suavizado mediante ventana de Hann.
 
-### 🔹 Modelos implementados
-- **Modelos clásicos de ML:** LightGBM, XGBoost para la deteccion de la presencia de el evento isquemico y para predecir la localización del infarto (anterior, inferior, lateral o septal)..  
-- **Modelo CNN-1D:** Red neuronal convolucional unidimensional para verificar si presenta o no la patologia.  
-- **Estimación anatómica:** Modelos auxiliares para predecir la localización del infarto (anterior, inferior, lateral o septal).
+Aplanamiento de las señales con la función flatten.
 
-### 🔹 Preprocesamiento
-Nuestro modelo implemento
-1. Filtrado pasa banda Butterworth de 4.º orden (0.5–40 Hz).
-2. Suavizado de la señal con Ventanas Hann
-3. Aplanamiento de las señales con la funcion  flatten
+🧾 Conjunto de datos
+Debido a su tamaño, el conjunto de datos se distribuye desde la sección Releases del repositorio.
 
----
+Archivo	Descripción	Tamaño	SHA-256
+Base.de.datos.MyoAlert.Vision.zip	Base de datos completa de señales ECG procesadas (v1.0)	851 MB	795d498675bc0ae84a93da586c11c9a13f82e33934cbaa0befad45d675cfff37
+base_de_datos_ecg_2025_v1.csv	Archivo resumen con metadatos y etiquetas reorganizadas de los registros de ECG empleados	2.27 MB	032cb91671ff9ab40ee1e7ec758ce12586c858902f967d913c608735edd37f89
 
-## 🧾 Conjunto de datos
-
-Debido a su tamaño, el conjunto de datos se distribuye desde la sección **[Releases](https://github.com/alejaceron/MyoAlert-Vision/releases)** del repositorio.
-
-| Archivo | Descripción | Tamaño | SHA-256 |
-|----------|-------------|--------|----------|
-| `Base.de.datos.MyoAlert.Vision.zip` | Base de datos completa de señales ECG procesadas (v1.0) | 851 MB | `795d498675bc0ae84a93da586c11c9a13f82e33934cbaa0befad45d675cfff37` |
-| `base_de_datos_ecg_2025_v1.csv` | Archivo resumen con metadatos y etiquetas (paciente, diagnóstico, derivaciones, duración, etc.) | 2.27 MB | `032cb91671ff9ab40ee1e7ec758ce12586c858902f967d913c608735edd37f89` |
-
-### 📂 Estructura del dataset
-
+📂 Estructura del dataset
+plaintext
+Copiar código
 Base de datos MyoAlert Vision/
 ├── ECG_NORMAL/
-│ ├── s0001/
-│ │ ├── s0001.hea # Archivo de cabecera (formato WFDB)
-│ │ └── s0001.dat # Archivo binario con la señal ECG
-│ ├── s0002/
-│ │ ├── s0002.hea
-│ │ └── s0002.dat
-│ └── ...
+│   ├── s0001/
+│   │   ├── s0001.hea
+│   │   └── s0001.dat
+│   ├── s0002/
+│   │   ├── s0002.hea
+│   │   └── s0002.dat
+│   └── ...
 │
 └── ECG_IAMCEST/
-├── s0001/
-│ ├── s0001.hea
-│ └── s0001.dat
-├── s0002/
-│ ├── s0002.hea
-│ └── s0002.dat
-└── ...
+    ├── s0001/
+    │   ├── s0001.hea
+    │   └── s0001.dat
+    ├── s0002/
+    │   ├── s0002.hea
+    │   └── s0002.dat
+    └── ...
+Cada registro incluye archivos en formato WFDB, compatibles con librerías como wfdb.
+Los archivos .hea contienen metadatos clínicos (frecuencia de muestreo, número de derivaciones, duración y datos del paciente), mientras que los archivos .dat almacenan la señal ECG en formato binario.
 
-Cada carpeta contiene registros individuales en formato **WFDB**, compatible con librerías como [`wfdb`](https://wfdb.readthedocs.io/en/latest/)   
-Los archivos `.hea` incluyen información de cabecera como:
-- Número de derivaciones  
-- Frecuencia de muestreo  
-- Duración del registro  
-- Identificación del sujeto  
+Nota: El archivo base_de_datos_ecg_2025_v1.csv resume las etiquetas diagnósticas y la trazabilidad de los registros originales de la base MIMIC-IV Waveform Database, reorganizados bajo una nomenclatura unificada para el proyecto MyoAlert Vision.
 
-Los archivos `.dat` contienen la señal ECG cruda codificada en binario.
+Para más detalles sobre la estructura y la procedencia de los datos, consulta la sección Releases.
 
-> **Nota:** El archivo `base_de_datos_ecg_2025_v1.csv` resume las etiquetas de diagnóstico y los metadatos asociados a cada registro, y puede emplearse para entrenamiento o validación de modelos.
+⚠️ Importante: El uso de esta base derivada requiere citar tanto la fuente original (MIMIC-IV WFDB) como el presente proyecto.
 
-### 📊 Descripción del archivo CSV
+📄 Citación
+Si utilizas este repositorio, sus modelos o su base de datos en trabajos académicos, por favor cita el proyecto de la siguiente forma:
 
-El archivo `base_de_datos_ecg_2025_v1.csv` consolida la información reorganizada de los registros provenientes de **MIMIC-IV Waveform Database**, siguiendo una nomenclatura unificada empleada en el proyecto *MyoAlert Vision*.  
-Cada fila corresponde a un registro de ECG e incluye:
+Referencia en formato IEEE:
 
-- `new_id`: Identificador asignado propio del examen (por ejemplo, `s0001`).  
-- `id_mimic`: Código del estudio original en la base MIMIC-IV.  
-- `diagnóstico`: Etiqueta clínica asignada (`Normal`, `IAMCEST_Anterior`, `IAMCEST_Inferior`, etc.).  
-- `duración`: Longitud de la señal en segundos.  
-- `fs`: Frecuencia de muestreo.  
-- `derivaciones`: Número de canales registrados.  
-- `ruta_archivo`: Dirección relativa dentro del dataset comprimido.  
-
-Esta estructura facilita la trazabilidad entre los registros utilizados y su origen clínico, garantizando transparencia en la validación del modelo y reproducibilidad experimental.
-
-> ⚠️ **Importante:** El uso del dataset derivado debe citar la fuente original (MIMIC-IV WFDB) y el proyecto *MyoAlert Vision* según la sección de citación indicada más adelante.
-
-## 📦 Releases del proyecto
-
-Las versiones oficiales del proyecto **MyoAlert Vision** se distribuyen mediante la sección **[Releases de GitHub](https://github.com/alejaceron/MyoAlert-Vision/releases)**.  
-Cada release incluye los recursos necesarios para la replicación experimental y el análisis de resultados descritos en la tesis.
-
-### 🔖 Contenido de los releases principales
-
-| Versión | Contenido | Descripción | Fecha de publicación |
-|----------|------------|-------------|----------------------|
-| **v1.0 – Dataset MyoAlert Vision** | `Base.de.datos.MyoAlert.Vision.zip` <br> `base_de_datos_ecg_2025_v1.csv` | Conjunto completo de señales ECG organizadas por clase (*Normal* / *IAMCEST*), junto con la base de metadatos reestructurada y vinculada a los estudios originales de **MIMIC-IV WFDB**. | Septiembre 2025 |
-| **v1.1 – Aplicación Web MyoAlert Vision** | `myoalert_vision_app.zip` <br> `Manual_de_usuario.pdf` | Código fuente y documentación de la aplicación web desarrollada para el soporte diagnóstico basado en los modelos de IA. | Octubre 2025 |
-
-> 📁 Cada release está verificado mediante su hash **SHA-256** para garantizar la integridad de los archivos descargados.
-
-Para descargar una versión específica:
-1. Dirígete a la pestaña **[Releases](https://github.com/alejaceron/MyoAlert-Vision/releases)**.  
-2. Selecciona la versión deseada.  
-3. Descarga los archivos comprimidos correspondientes a tu interés (dataset o aplicación).  
-
-
+W. Obregón Londoño, A. Daza Cerón, C. Torres Valencia y D. F. Ramírez Jiménez,
+"MyoAlert Vision: Sistema inteligente de apoyo diagnóstico para la detección automática del Infarto Agudo de Miocardio con Elevación del Segmento ST (IAMCEST) mediante análisis de señales ECG,"
+Pontificia Universidad Javeriana de Cali, Colombia, 2025.
